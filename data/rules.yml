@@ -1,11 +1,10 @@
 version: "2.0"
 
 rules:
-#  - rule: Hello World!
-#    conversation_start: true
-#    steps:
-#      - intent: greet
-#      - action: action_hello_world
+- rule: fucking_start
+  steps:
+  - intent: start
+  - action: utter_greet
 
 
 - rule: Say hello to the greet at the beginning of the dialog
@@ -13,17 +12,17 @@ rules:
   steps:
   - intent: greet
   - action: utter_greet
-
-- rule: Say what time is it
-  steps:
-  - intent: what_time_is_it
-  - action: action_show_time
-
-
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
+#
+#- rule: Say what time is it
+#  steps:
+#  - intent: what_time_is_it
+#  - action: action_show_time
+#
+#
+#- rule: Say goodbye anytime the user says goodbye
+#  steps:
+#  - intent: goodbye
+#  - action: utter_goodbye
 
 #- rule: Say 'I am a bot' anytime the user challenges
 #  steps:

@@ -13,64 +13,117 @@ stories:
   - action: utter_goodbye
 
 
-#  - story: story_где_находится_военкомат
-#    steps:
-#      - intent: где_находится_военкомат
-#      - action: action_response_faq
+- story: story_где_находится_военкомат
+  steps:
+  - intent: где_находится_военкомат
+  - action: action_faq
 
+- story: story_есть_ли_военная_кафедра
+  steps:
+  - intent: есть_ли_военная_кафедра
+  - action: action_faq
 
-#  - story: привет, пока, оценка плохо
-#    steps:
-#      - intent: greet
-#      - action: utter_greet
-#      - intent: goodbye
-#      - action: utter_goodbye
-#      - action: utter_how_is_our_conversation
-#      - intent: awful
-#      - action: utter_so_sorry
+- story: story_как_получить_пропуск
+  steps:
+  - intent: как_получить_пропуск
+  - action: action_faq
 
-#  - story: hello goodbye
-#    steps:
-#      - intent: greet
-#      - action: utter_greet
-#      - intent: goodbye
-#      - action: utter_goodbye
+- story: story_сколько_стоит_обед
+  steps:
+  - intent: сколько_стоит_обед
+  - action: action_faq
 
-#  - story: привет, как зовут и пока
-#    steps:
-#      - intent: greet
-#      - action: utter_greet
-#      - action: utter_what_is_your_name
-#
-#      - intent: my_name
-#      - action: utter_pleased_to_meet_you
-#
-#      - intent: goodbye
-#      - action: utter_goodbye
+- story: story_где_посмотреть_расписание
+  steps:
+  - intent: где_посмотреть_расписание
+  - action: action_faq
 
-#- story: happy path
-#  steps:
-#  - intent: greet
-#  - action: utter_greet
-#  - intent: mood_great
-#  - action: utter_happy
-#
-#- story: sad path 1
-#  steps:
-#  - intent: greet
-#  - action: utter_greet
-#  - intent: mood_unhappy
-#  - action: utter_cheer_up
-#  - action: utter_did_that_help
-#  - intent: affirm
-#  - action: utter_happy
-#
-#- story: sad path 2
-#  steps:
-#  - intent: greet
-#  - action: utter_greet
-#  - intent: mood_unhappy
-#  - action: utter_cheer_up
-#  - action: utter_did_that_help
-#  - intent: deny
-#  - action: utter_goodbye
+- story: story_куда_идти_я_не_понимаю
+  steps:
+  - intent: куда_идти_я_не_понимаю
+  - action: action_faq
+
+- story: story_где_находится_поликлиника
+  steps:
+  - intent: где_находится_поликлиника
+  - action: action_faq
+
+- story: story_где_взять_учебники
+  steps:
+  - intent: где_взять_учебники
+  - action: action_faq
+
+- story: story_где_посмотреть_расписание_сессии
+  steps:
+  - intent: где_посмотреть_расписание_сессии
+  - action: action_faq
+
+- story: story_где_находится_университет
+  steps:
+  - intent: где_находится_университет
+  - action: action_faq
+
+- story: story_есть_ли_скидки_на_платку
+  steps:
+  - intent: есть_ли_скидки_на_платку
+  - action: action_faq
+
+- story: story_отзывы_по_преподавателям
+  steps:
+  - intent: отзывы_по_преподавателям
+  - action: action_faq
+
+- story: story_какие_спортивные_секции_есть
+  steps:
+  - intent: какие_спортивные_секции_есть
+  - action: action_faq
+
+- story: story_что_делать_если_заболел
+  steps:
+  - intent: что_делать_если_заболел
+  - action: action_faq
+
+- story: story_как_поступить_на_военную_кафедру
+  steps:
+  - intent: как_поступить_на_военную_кафедру
+  - action: action_faq
+
+- story: story_сколько_лет_проходит_обучение_на_военной_кафедре
+  steps:
+  - intent: сколько_лет_проходит_обучение_на_военной_кафедре
+  - action: action_faq
+
+- story: story_есть_ли_ограничение_на_выезд
+  steps:
+  - intent: есть_ли_ограничение_на_выезд
+  - action: action_faq
+
+- story: story_что_дает_золотой_значок_гто
+  steps:
+  - intent: что_дает_золотой_значок_гто
+  - action: action_faq
+
+- story: story_можно_ли_поменять_образовательную_программу
+  steps:
+  - intent: можно_ли_поменять_образовательную_программу
+  - action: action_faq
+
+- story: story_можно_ли_перевестись_на_бюджет_из_другого_вуза
+  steps:
+  - intent: можно_ли_перевестись_на_бюджет_из_другого_вуза
+  - action: action_faq
+
+- story: story_можно_ли_подать_заявление_в_мифи_дистанционно
+  steps:
+  - intent: можно_ли_подать_заявление_в_мифи_дистанционно
+  - action: action_faq
+
+- story: story_есть_ли_конкурс_на_общежитие
+  steps:
+  - intent: есть_ли_конкурс_на_общежитие
+  - action: action_faq
+
+- story: story_сколько_баллов_дает_сочинение
+  steps:
+  - intent: сколько_баллов_дает_сочинение
+  - action: action_faq

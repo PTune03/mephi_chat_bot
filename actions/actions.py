@@ -46,7 +46,7 @@ class ActionFAQ(Action):
     def name(self) -> Text:
         return "action_faq"
 
-    async def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain) -> List[EventType]:
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain) -> List[EventType]:
         text = tracker.latest_message['text']
         text = text.lower()
         intent = tracker.get_intent_of_latest_message()

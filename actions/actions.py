@@ -1,3 +1,4 @@
+import operator
 from ruamel.yaml import YAML
 import logging
 import base64
@@ -15,20 +16,7 @@ logger.setLevel(logging.DEBUG)
 ruamel_yaml = YAML(typ='safe')
 domain_data = ruamel_yaml.load(Path('domain.yml'))
 
-
-# class ActionShowTime(Action):
-#
-#     def name(self) -> Text:  # регистрация имени действия
-#         return "action_show_time"
-#
-#     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#         # при вызове действия, возвращать ответ с текущим временем:
-#         text = tracker.latest_message['text']
-#         utter = f'На ваш вопрос "{text}" отвечу: {dt.now().strftime("%H:%M")}'
-#         dispatcher.utter_message(text=utter)
-#         # dispatcher.utter_message(text=f'Сейчас {dt.now().strftime("%H:%M")}')
-#
-#         return []
+intents = domain_data['intents']
 
 
 class ActionHelloWorld(Action):
@@ -67,9 +55,33 @@ class ActionClassification(Action):
         return "action_classification"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain) -> List[EventType]:
-        dispatcher.utter_message(text="Работает!")
-
+        last = []
+        text = tracker.latest_message.get('text').lower()
+        logger.debug(text)
+        logger.debug('='*100)
+        intent_ranking = tracker.latest_message.get("intent_ranking")
+        logger.debug(intent_ranking)
+        logger.debug('=' * 100)
+        latest_message_token = text.split()
+        logger.debug(latest_message_token)
+        intent_ranking = sorted(intent_ranking, key=operator.itemgetter('confidence'))
+        for i in intent_ranking:
+            if i['name'] in intents:
+                last.append(i)
+        last_three = last[-3:]
+        last_three.reverse()
+        top_intents = []
+        for i in last_three:
+            top_intents.append(i['name'])
+        answer = "Возможно вы имели в виду?"
+        buttons = [{'title': 'first',
+                    'payload': ''},
+                   {'title': 'No',
+                    'payload': ''}]
+        dispatcher.utter_button_message(answer, buttons=buttons)
         return [Restarted()]
+
+
 # This files contains your custom actions which can be used to run
 # custom Python code.
 #

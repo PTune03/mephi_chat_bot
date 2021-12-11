@@ -4,15 +4,7 @@ intents:
   - greet
   - start
   - goodbye
-  - my_name
-  - perfect
-  - awful
-  - soso
   - получить_пропуск_в_общежитие
-  - thanks
-  - affirm
-  - deny
-  - what_time_is_it
   - сколько_стоит_обед
   - как_получить_пропуск
   - где_посмотреть_расписание
@@ -37,13 +29,6 @@ intents:
   - есть_ли_конкурс_на_общежитие
   - сколько_баллов_дает_сочинение
 
-entities:
-  - PERSON
-
-slots:
-  PERSON:
-    type: text
-
 actions:
   - action_hello_world
   - action_classification
@@ -60,31 +45,15 @@ responses:
     - text: "До новых встреч!"
     - text: "Всего хорошего! Если что, обращайтесь!"
 
-  utter_pleased_to_meet_you:
-    - text: Рад знакомству, {PERSON}!
-
-  utter_what_is_your_name:
-    - text: "Как тебя зовут?"
-
-  utter_how_is_our_conversation:
-    - text: "Оцените качество работы: "
-      buttons:
-        - title: Отлично
-          payload: /perfect
-        - title: Такое себе
-          payload: /soso
-        - title: Днище
-          payload: /awful
-  utter_happy_for_us:
-    - text: Я очень рад, что смог помочь вам!
-    - text: Обращайтесь!
-  utter_any_questions:
-    - text: Ещё остались вопросы?
-    - text: Ещё есть, что хотите спросить?
-    - text: Может ещё о чем-нибудь спросите?
-
-  utter_so_sorry:
-    - text: Напишите, что вам не понравилось, мы обязательно исправим это!
+#  utter_how_is_our_conversation:
+#    - text: "Оцените качество работы: "
+#      buttons:
+#        - title: Отлично
+#          payload: /perfect
+#        - title: Такое себе
+#          payload: /soso
+#        - title: Днище
+#          payload: /awful
 
 
 answers:
@@ -180,6 +149,7 @@ answers:
 
   сколько_баллов_дает_сочинение:
     text: '''Итоговое сочинение даёт +2 балла, если оценка "5" и +1 балл, если оценка "4".'''
+
 
 
 

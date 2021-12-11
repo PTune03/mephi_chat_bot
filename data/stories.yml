@@ -3,8 +3,8 @@ version: "2.0"
 stories:
 - story: story_получить_пропуск_в_общежитие
   steps:
-    - intent: получить_пропуск_в_общежитие
-    - action: action_faq
+  - intent: получить_пропуск_в_общежитие
+  - action: action_faq
 
 - story: story_где_находится_военкомат
   steps:
@@ -120,3 +120,4 @@ stories:
   steps:
   - intent: сколько_баллов_дает_сочинение
   - action: action_faq
+
